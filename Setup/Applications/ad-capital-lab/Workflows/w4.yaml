@@ -31,6 +31,18 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Verify
+    steps:
+    - type: APP_DYNAMICS
+      name: AppDynamics
+      properties:
+        analysisServerConfigId: pHDUoS8KRkKNDvEvmikUAQ
+        analysisTolerance: LOW
+        applicationId: '9'
+        comparisonStrategy: COMPARE_WITH_CURRENT
+        executeWithPreviousSteps: false
+        hostnameTemplate: ${host.hostName}
+        tierId: '37'
+        timeDuration: 15
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
